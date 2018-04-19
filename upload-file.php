@@ -95,7 +95,7 @@
               $sqluser_verify = $mysqli->query("SELECT * FROM ".$prefix."user WHERE username LIKE '%" . strtoupper ($datos[$c])."%'");
               if ($sqluser_verify->num_rows>0) {
                 while ( $rows = $sqluser_verify->fetch_assoc() ) {
-                  echo "Verificacion de informacion en base de datos usuario actualizado por USERNAME " . $rows['username'] . " status " . $rows['suspended']  . " con correo " . $rows['email'];
+                  echo "Verificacion en base de datos usuario actualizado por USERNAME " . $rows['username'] . " status " . $rows['suspended']  . " password " . $rows['password']  . " correo " . $rows['email'];
                 }
                 $sqluser_verify->free();
               }
@@ -111,7 +111,7 @@
                 $sql_usuario_correo_verify  = $mysqli->query($query_email);
                 if ($sql_usuario_correo_verify ->num_rows>0) {
                   while ( $rows = $sql_usuario_correo_verify->fetch_assoc() ) {
-                    echo "Verificacion en base de datos usuario actualizado por EMAIL " . $rows['username'] . " status " . $rows['suspended']  . " con correo " . $rows['email'];
+                    echo "Verificacion en base de datos usuario actualizado por EMAIL " . $rows['username'] . " status " . $rows['suspended']  . " password " . $rows['password']  . " correo " . $rows['email'];
                   }
                   $sql_usuario_correo_verify->free();
                 }
